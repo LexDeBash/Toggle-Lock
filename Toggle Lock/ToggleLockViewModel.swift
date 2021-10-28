@@ -65,7 +65,27 @@ class ToggleLockViewModel: ObservableObject {
             }
         }
     }
-        
+    
+    func openApp() {
+        let laContext = LAContext()
+        if getBiometricStatus() {
+            let reason = "Идентифицируйте себя, пожалуйста."
+            laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+                if success {
+                    DispatchQueue.main.async {
+                        self.isUnlocked = true
+                    }
+                } else{
+                    if let error = error{
+                        DispatchQueue.main.async {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     enum UserDefaultsKeys: String {
         case isAppLockEnabled
     }
