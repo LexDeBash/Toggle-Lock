@@ -11,6 +11,7 @@
 		299658D8272A9D4E004672B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658D7272A9D4E004672B1 /* ContentView.swift */; };
 		299658DA272A9D50004672B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299658D9272A9D50004672B1 /* Assets.xcassets */; };
 		299658DD272A9D50004672B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299658DC272A9D50004672B1 /* Preview Assets.xcassets */; };
+		299658E4272A9D93004672B1 /* ToggleLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		299658D7272A9D4E004672B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		299658D9272A9D50004672B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		299658DC272A9D50004672B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLockViewModel.swift; sourceTree = "<group>"; };
+		299658E5272A9FCD004672B1 /* Toggle-Lock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Toggle-Lock-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 		299658D4272A9D4E004672B1 /* Toggle Lock */ = {
 			isa = PBXGroup;
 			children = (
+				299658E5272A9FCD004672B1 /* Toggle-Lock-Info.plist */,
 				299658D5272A9D4E004672B1 /* Toggle_LockApp.swift */,
 				299658D7272A9D4E004672B1 /* ContentView.swift */,
+				299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */,
 				299658D9272A9D50004672B1 /* Assets.xcassets */,
 				299658DB272A9D50004672B1 /* Preview Content */,
 			);
@@ -139,6 +144,7 @@
 			files = (
 				299658D8272A9D4E004672B1 /* ContentView.swift in Sources */,
 				299658D6272A9D4E004672B1 /* Toggle_LockApp.swift in Sources */,
+				299658E4272A9D93004672B1 /* ToggleLockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +278,7 @@
 				DEVELOPMENT_TEAM = A53U52H77W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Toggle-Lock-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +308,7 @@
 				DEVELOPMENT_TEAM = A53U52H77W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Toggle-Lock-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
