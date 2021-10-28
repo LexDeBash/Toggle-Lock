@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var toggleLockViewModel: ToggleLockViewModel
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            if !toggleLockViewModel.isLockEnabled || toggleLockViewModel.isUnlocked {
+                ToggleView()
+                    .environmentObject(toggleLockViewModel)
+            } else {
+                LockedView()
+                    .environmentObject(toggleLockViewModel)
+            }
+        }
+        .onAppear{
+            if toggleLockViewModel.isLockEnabled {
+                toggleLockViewModel.openApp()
+            }
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

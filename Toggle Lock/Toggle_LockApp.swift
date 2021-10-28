@@ -9,9 +9,25 @@ import SwiftUI
 
 @main
 struct Toggle_LockApp: App {
+    @StateObject var toggleLockViewModel = ToggleLockViewModel()
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(toggleLockViewModel)
+                .onChange(of: scenePhase) { newValue in
+                    switch newValue {
+                    case .background:
+                        toggleLockViewModel.isUnlocked = false
+                    case .inactive:
+                        print("inactive")
+                    case .active:
+                        print("active")
+                    @unknown default:
+                        print("unknown")
+                    }
+                }
         }
     }
 }

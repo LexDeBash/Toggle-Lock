@@ -6,7 +6,6 @@
 //
 
 import LocalAuthentication
-//import SwiftUI
 
 class ToggleLockViewModel: ObservableObject {
     @Published var isLockEnabled = false
