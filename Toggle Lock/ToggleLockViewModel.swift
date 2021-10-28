@@ -6,6 +6,7 @@
 //
 
 import LocalAuthentication
+import SwiftUI
 
 class ToggleLockViewModel: ObservableObject {
     @Published var isLockEnabled = false
@@ -33,6 +34,33 @@ class ToggleLockViewModel: ObservableObject {
             print(error.localizedDescription)
         }
         return biometricStatus
+    }
+    
+    func changeLockStatus(lockStatus: Bool) {
+        let laContext = LAContext()
+        if getBiometricStatus() {
+            let reason = "Идентифицируйте себя, пожалуйста."
+            laContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        print(error.localizedDescription)
+                    }
+                }
+                
+                if lockStatus{
+                    DispatchQueue.main.async {
+                        self.lock()
+                        self.isLockEnabled = true
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.unlock()
+                        self.isLockEnabled = false
+                    }
+                }
+            }
+        }
+        // no biometric
     }
     
     enum UserDefaultsKeys: String {
