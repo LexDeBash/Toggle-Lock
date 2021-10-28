@@ -12,6 +12,10 @@ class ToggleLockViewModel: ObservableObject {
     @Published var isLockEnabled = false
     @Published var isUnlocked = false
     
+    init() {
+        getLockStatus()
+    }
+    
     func lock() {
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
         self.isLockEnabled = true
@@ -60,9 +64,8 @@ class ToggleLockViewModel: ObservableObject {
                 }
             }
         }
-        // no biometric
     }
-    
+        
     enum UserDefaultsKeys: String {
         case isAppLockEnabled
     }
