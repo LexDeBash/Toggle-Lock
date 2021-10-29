@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  StarterView.swift
 //  Toggle Lock
 //
 //  Created by Marius Malyshev on 28.10.2021.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @EnvironmentObject var toggleLockViewModel: ToggleLockViewModel
+struct StarterView: View {
+    @EnvironmentObject private var toggleLockViewModel: ToggleLockViewModel
 
     var body: some View {
-        ZStack{
+        Group {
             if !toggleLockViewModel.isLockEnabled || toggleLockViewModel.isUnlocked {
                 ToggleView()
                     .environmentObject(toggleLockViewModel)
@@ -20,7 +20,7 @@ struct ContentView: View {
                     .environmentObject(toggleLockViewModel)
             }
         }
-        .onAppear{
+        .onAppear {
             if toggleLockViewModel.isLockEnabled {
                 toggleLockViewModel.openApp()
             }

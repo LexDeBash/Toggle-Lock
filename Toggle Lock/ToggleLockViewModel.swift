@@ -8,25 +8,19 @@
 import LocalAuthentication
 
 class ToggleLockViewModel: ObservableObject {
-    @Published var isLockEnabled = false
-    @Published var isUnlocked = false
+    @Published var isLockEnabled = false {
+        didSet {
+            UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        }
+    }
+    @Published var isUnlocked = false {
+        didSet {
+            UserDefaults.standard.set(isUnlocked, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        }
+    }
     
     init() {
-        getLockStatus()
-    }
-    
-    func lock() {
-        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
-        self.isLockEnabled = true
-    }
-    
-    func unlock() {
-        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
-        self.isLockEnabled = false
-    }
-    
-    func getLockStatus() {
-        isLockEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        UserDefaults.standard.bool(forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
     }
     
     func getBiometricStatus() -> Bool {
@@ -43,23 +37,15 @@ class ToggleLockViewModel: ObservableObject {
         let laContext = LAContext()
         if getBiometricStatus() {
             let reason = "Идентифицируйте себя, пожалуйста."
-            laContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
+            laContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { _, error in
                 if let error = error {
-                    DispatchQueue.main.async {
-                        print(error.localizedDescription)
-                    }
+                    print(error.localizedDescription)
                 }
                 
-                if lockStatus{
-                    DispatchQueue.main.async {
-                        self.lock()
-                        self.isLockEnabled = true
-                    }
+                if lockStatus {
+                    self.isLockEnabled = true
                 } else {
-                    DispatchQueue.main.async {
-                        self.unlock()
-                        self.isLockEnabled = false
-                    }
+                    self.isLockEnabled = false
                 }
             }
         }
@@ -71,21 +57,16 @@ class ToggleLockViewModel: ObservableObject {
             let reason = "Идентифицируйте себя, пожалуйста."
             laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
                 if success {
-                    DispatchQueue.main.async {
-                        self.isUnlocked = true
-                    }
-                } else{
-                    if let error = error{
-                        DispatchQueue.main.async {
-                            print(error.localizedDescription)
-                        }
-                    }
+                    self.isUnlocked = true
+                } else if let error = error {
+                    print(error.localizedDescription)
                 }
             }
         }
     }
-    
-    enum UserDefaultsKeys: String {
-        case isAppLockEnabled
-    }
 }
+
+enum UserDefaultsKeys: String {
+    case isAppLockEnabled
+}
+

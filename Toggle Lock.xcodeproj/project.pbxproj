@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		299658D6272A9D4E004672B1 /* Toggle_LockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658D5272A9D4E004672B1 /* Toggle_LockApp.swift */; };
-		299658D8272A9D4E004672B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658D7272A9D4E004672B1 /* ContentView.swift */; };
+		299658D8272A9D4E004672B1 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658D7272A9D4E004672B1 /* StarterView.swift */; };
 		299658DA272A9D50004672B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299658D9272A9D50004672B1 /* Assets.xcassets */; };
 		299658DD272A9D50004672B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299658DC272A9D50004672B1 /* Preview Assets.xcassets */; };
 		299658E4272A9D93004672B1 /* ToggleLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		299658D2272A9D4E004672B1 /* Toggle Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toggle Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		299658D5272A9D4E004672B1 /* Toggle_LockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle_LockApp.swift; sourceTree = "<group>"; };
-		299658D7272A9D4E004672B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		299658D7272A9D4E004672B1 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		299658D9272A9D50004672B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		299658DC272A9D50004672B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLockViewModel.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			children = (
 				299658D5272A9D4E004672B1 /* Toggle_LockApp.swift */,
 				299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */,
-				299658D7272A9D4E004672B1 /* ContentView.swift */,
+				299658D7272A9D4E004672B1 /* StarterView.swift */,
 				299658EA272ABC4E004672B1 /* LockedView.swift */,
 				299658E6272AB972004672B1 /* ToggleView.swift */,
 				299658D9272A9D50004672B1 /* Assets.xcassets */,
@@ -148,7 +148,7 @@
 			files = (
 				299658E7272AB972004672B1 /* ToggleView.swift in Sources */,
 				299658EB272ABC4E004672B1 /* LockedView.swift in Sources */,
-				299658D8272A9D4E004672B1 /* ContentView.swift in Sources */,
+				299658D8272A9D4E004672B1 /* StarterView.swift in Sources */,
 				299658D6272A9D4E004672B1 /* Toggle_LockApp.swift in Sources */,
 				299658E4272A9D93004672B1 /* ToggleLockViewModel.swift in Sources */,
 			);

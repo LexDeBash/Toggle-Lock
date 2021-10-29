@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ToggleView: View {
-    @EnvironmentObject var toggleLockViewModel: ToggleLockViewModel
+    @EnvironmentObject private var toggleLockViewModel: ToggleLockViewModel
     
     var body: some View {
         Toggle("Change Lock Status", isOn: $toggleLockViewModel.isLockEnabled)
-            .onChange(of: toggleLockViewModel.isLockEnabled, perform: { value in
+            .onChange(of: toggleLockViewModel.isLockEnabled) { value in
                 toggleLockViewModel.changeLockStatus(lockStatus: value)
-            })
+            }
+            .padding()
     }
 }
