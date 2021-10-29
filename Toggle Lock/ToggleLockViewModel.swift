@@ -44,21 +44,14 @@ class ToggleLockViewModel: ObservableObject {
         if getBiometricStatus() {
             let reason = "Идентифицируйте себя, пожалуйста."
             laContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
-                if let error = error {
-                    DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    if let error = error {
                         print(error.localizedDescription)
                     }
-                }
-                
-                if lockStatus{
-                    DispatchQueue.main.async {
+                    if lockStatus{
                         self.lock()
-                        self.isLockEnabled = true
-                    }
-                } else {
-                    DispatchQueue.main.async {
+                    } else {
                         self.unlock()
-                        self.isLockEnabled = false
                     }
                 }
             }
@@ -70,13 +63,11 @@ class ToggleLockViewModel: ObservableObject {
         if getBiometricStatus() {
             let reason = "Идентифицируйте себя, пожалуйста."
             laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
-                if success {
-                    DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    if success {
                         self.isUnlocked = true
-                    }
-                } else{
-                    if let error = error{
-                        DispatchQueue.main.async {
+                    } else{
+                        if let error = error{
                             print(error.localizedDescription)
                         }
                     }
@@ -84,8 +75,7 @@ class ToggleLockViewModel: ObservableObject {
             }
         }
     }
-    
-    enum UserDefaultsKeys: String {
-        case isAppLockEnabled
-    }
+}
+enum UserDefaultsKeys: String {
+    case isAppLockEnabled
 }
