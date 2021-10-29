@@ -16,8 +16,8 @@ struct Toggle_LockApp: App {
         WindowGroup {
             StarterView()
                 .environmentObject(toggleLockViewModel)
-                .onChange(of: scenePhase) { newValue in
-                    switch newValue {
+                .onChange(of: scenePhase) { sceneMode in
+                    switch sceneMode {
                     case .background:
                         toggleLockViewModel.isUnlocked = false
                     case .inactive:
