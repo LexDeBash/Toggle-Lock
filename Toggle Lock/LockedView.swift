@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LockedView: View {
-    @EnvironmentObject var toggleLockViewModel: ToggleLockViewModel
+    @EnvironmentObject private var toggleLockViewModel: ToggleLockViewModel
     
     var body: some View {
         Image(systemName: "lock")
