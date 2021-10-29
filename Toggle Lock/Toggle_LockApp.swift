@@ -14,7 +14,7 @@ struct Toggle_LockApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StarterView()
                 .environmentObject(toggleLockViewModel)
                 .onChange(of: scenePhase) { newValue in
                     switch newValue {
