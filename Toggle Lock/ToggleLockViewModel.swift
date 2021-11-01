@@ -16,13 +16,13 @@ class ToggleLockViewModel: ObservableObject {
     }
     
     func lock() {
-        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
         self.isLockEnabled = true
+        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
     }
     
     func unlock() {
-        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
         self.isLockEnabled = false
+        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
     }
     
     func getLockStatus() {
