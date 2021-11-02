@@ -17,16 +17,16 @@ class ToggleLockViewModel: ObservableObject {
     
     func lock() {
         self.isLockEnabled = true
-        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isLockEnabled.rawValue)
     }
     
     func unlock() {
         self.isLockEnabled = false
-        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        UserDefaults.standard.set(isLockEnabled, forKey: UserDefaultsKeys.isLockEnabled.rawValue)
     }
     
     func getLockStatus() {
-        isLockEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isAppLockEnabled.rawValue)
+        isLockEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLockEnabled.rawValue)
     }
     
     func getBiometricStatus() -> Bool {
@@ -74,5 +74,5 @@ class ToggleLockViewModel: ObservableObject {
 }
 
 enum UserDefaultsKeys: String {
-    case isAppLockEnabled
+    case isLockEnabled
 }
