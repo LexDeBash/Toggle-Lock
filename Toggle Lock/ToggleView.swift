@@ -14,6 +14,7 @@ struct ToggleView: View {
         Toggle("Change Lock Status", isOn: $toggleLockViewModel.isLockEnabled)
             .onChange(of: toggleLockViewModel.isLockEnabled) { value in
                 toggleLockViewModel.changeLockStatus(lockStatus: value)
+                print(value)
             }
             .padding()
     }

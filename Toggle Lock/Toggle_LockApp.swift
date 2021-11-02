@@ -23,7 +23,6 @@ struct Toggle_LockApp: App {
                     switch sceneMode {
                     case .background:
                         toggleLockViewModel.isUnlocked = false
-                        print("Статус изменился в бэке")
                     case .inactive:
                         blurRadius = 5
                     case .active:
