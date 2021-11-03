@@ -58,14 +58,12 @@ class ToggleLockViewModel: ObservableObject {
         let laContext = LAContext()
         if getBiometricStatus() {
             let reason = "Идентифицируйте себя, пожалуйста."
-            laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+            laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { _, error in
                 DispatchQueue.main.async {
-                    if success {
-                        self.isUnlocked = true
-                    } else{
-                        if let error = error{
-                            print(error.localizedDescription)
-                        }
+                    self.isUnlocked = true
+
+                    if let error = error{
+                        print(error.localizedDescription)
                     }
                 }
             }
