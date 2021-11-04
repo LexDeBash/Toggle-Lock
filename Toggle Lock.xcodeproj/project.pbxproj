@@ -60,8 +60,8 @@
 				299658D5272A9D4E004672B1 /* Toggle_LockApp.swift */,
 				299658E3272A9D93004672B1 /* ToggleLockViewModel.swift */,
 				299658D7272A9D4E004672B1 /* StarterView.swift */,
-				299658EA272ABC4E004672B1 /* LockedView.swift */,
 				299658E6272AB972004672B1 /* ToggleView.swift */,
+				299658EA272ABC4E004672B1 /* LockedView.swift */,
 				299658D9272A9D50004672B1 /* Assets.xcassets */,
 				299658DB272A9D50004672B1 /* Preview Content */,
 			);
@@ -285,7 +285,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Toggle-Lock-Info.plist";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(PRODUCT_NAME) require Touch ID or Face ID permission";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Идентифицируйте себя, пожалуйста.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,7 +316,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Toggle-Lock-Info.plist";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(PRODUCT_NAME) require Touch ID or Face ID permission";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Идентифицируйте себя, пожалуйста.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
