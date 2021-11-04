@@ -67,6 +67,6 @@ class ToggleLockViewModel: ObservableObject {
 }
 
 enum UserDefaultsKeys: String {
-    case isAppLockEnabled
+    case isLockEnabled
 }
 
